@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f7f9f7;
+    color: #222;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b4332;
+    color: white;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #95d5b2;
+}
+
+.btn-login {
+    background: #40916c;
+    padding: 6px 14px;
+    border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/hero.jpg') center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    background: #40916c;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #2d6a4f;
+}
+
+/* Ticket cards */
+.info-section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.ticket-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+.footer {
+    background: #1b4332;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
