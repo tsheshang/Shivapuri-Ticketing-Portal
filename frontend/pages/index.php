@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivapuri National Park - Ticketing</title>
-    <link rel="stylesheet" href="/shivapuri-ticketing/frontend/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
@@ -54,6 +54,8 @@
     <p>&copy; <?php echo date("Y"); ?> Shivapuri National Park Ticketing Portal. All rights reserved.</p>
     <p>Nagarjun Municipality, Kathmandu, Nepal</p>
 </footer>
+
+<script src="../assets/js/main.js"></script>
 
 </body>
 </html>
