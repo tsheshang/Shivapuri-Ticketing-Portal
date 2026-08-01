@@ -4,15 +4,15 @@ CREATE TABLE users (
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    role VARCHAR(20) NOT NULL DEFAULT 'visitor', -- 'visitor' or 'admin'
+    role VARCHAR(20) NOT NULL DEFAULT 'visitor',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Ticket categories: admin-editable pricing (no hardcoded prices in PHP)
+-- Ticket categories: admin-editable pricing
 CREATE TABLE ticket_categories (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,      -- e.g. 'Nepali Citizen'
-    code VARCHAR(20) UNIQUE NOT NULL, -- e.g. 'citizen', matches <select> values
+    name VARCHAR(50) NOT NULL,
+    code VARCHAR(20) UNIQUE NOT NULL,
     price NUMERIC(10,2) NOT NULL
 );
 
@@ -25,8 +25,8 @@ CREATE TABLE bookings (
     quantity INTEGER NOT NULL CHECK (quantity > 0),
     total_price NUMERIC(10,2) NOT NULL,
     phone VARCHAR(20) NOT NULL,
-    booking_ref VARCHAR(20) UNIQUE NOT NULL, -- e.g. 'SHV-2026-0001'
-    status VARCHAR(20) NOT NULL DEFAULT 'confirmed', -- confirmed / cancelled
+    booking_ref VARCHAR(20) UNIQUE NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'confirmed',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -44,7 +44,3 @@ INSERT INTO ticket_categories (name, code, price) VALUES
 ('Nepali Citizen', 'citizen', 100.00),
 ('SAARC National', 'saarc', 500.00),
 ('Foreign Tourist', 'foreigner', 1000.00);
-
--- Seed an admin account (password below is a placeholder hash — we'll generate a real one via PHP)
--- INSERT INTO users (full_name, email, password_hash, role) VALUES
--- ('Admin', 'admin@shivapuri.gov.np', 'REPLACE_WITH_REAL_HASH', 'admin');
