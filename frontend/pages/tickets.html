@@ -31,37 +31,61 @@
     </div>
 </section>
 
-<section class="form-section">
-    <div class="glass-card">
-        <h1>Booking Details</h1>
-        <p class="subtitle">Fill in your details below to reserve your visit</p>
+<section class="form-section" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80');">
+    <div class="booking-layout">
+        <div class="glass-card">
+            <h1>Booking Details</h1>
+            <p class="subtitle">Fill in your details below to reserve your visit</p>
 
-        <form action="../../backend/controllers/bookTicket.php" method="POST" class="ticket-form">
-            <label for="category">Visitor Category</label>
-            <select name="category" id="category" required>
-                <option value="">-- Select Category --</option>
-                <option value="citizen">Nepali Citizen - NPR 100</option>
-                <option value="saarc">SAARC National - NPR 500</option>
-                <option value="foreigner">Foreign Tourist - NPR 1000</option>
-            </select>
+            <form action="../../backend/controllers/bookTicket.php" method="POST" id="ticketForm">
+                <label for="category">Visitor Category</label>
+                <select name="category" id="category" required>
+                    <option value="">-- Select Category --</option>
+                    <option value="citizen" data-price="100">Nepali Citizen - NPR 100</option>
+                    <option value="saarc" data-price="500">SAARC National - NPR 500</option>
+                    <option value="foreigner" data-price="1000">Foreign Tourist - NPR 1000</option>
+                </select>
 
-            <label for="visit_date">Visit Date</label>
-            <input type="date" name="visit_date" id="visit_date" required>
+                <label for="visit_date">Visit Date</label>
+                <input type="date" name="visit_date" id="visit_date" required>
 
-            <label for="quantity">Number of Tickets</label>
-            <input type="number" name="quantity" id="quantity" min="1" max="20" value="1" required>
+                <label for="quantity">Number of Tickets</label>
+                <input type="number" name="quantity" id="quantity" min="1" max="20" value="1" required>
 
-            <label for="full_name">Full Name</label>
-            <input type="text" name="full_name" id="full_name" placeholder="Your full name" required>
+                <label for="full_name">Full Name</label>
+                <input type="text" name="full_name" id="full_name" placeholder="Your full name" required>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="you@example.com" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="you@example.com" required>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" id="phone" placeholder="98XXXXXXXX" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="98XXXXXXXX" required>
 
-            <button type="submit" class="btn-primary">Proceed to Book</button>
-        </form>
+                <button type="submit" class="btn-primary">Proceed to Book</button>
+            </form>
+        </div>
+
+        <div class="summary-card">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span>Category</span>
+                <span id="sumCategory">—</span>
+            </div>
+            <div class="summary-row">
+                <span>Price per ticket</span>
+                <span id="sumPrice">NPR 0</span>
+            </div>
+            <div class="summary-row">
+                <span>Quantity</span>
+                <span id="sumQty">1</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row summary-total">
+                <span>Total</span>
+                <span id="sumTotal">NPR 0</span>
+            </div>
+            <p class="summary-note">Payment collected at entry gate. This confirms your reservation only.</p>
+        </div>
     </div>
 </section>
 

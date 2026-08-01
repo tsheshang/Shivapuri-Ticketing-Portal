@@ -1,27 +1,24 @@
-/* ============================================================
-   BASE / RESET
-   Global resets and typography defaults used across all pages
-   ============================================================ */
+/* ===== BASE / RESET ===== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* padding/border included in element width, avoids overflow surprises */
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* smooth jump when clicking anchor links (#section) */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;       /* body font */
-    background: #0d0f0c;                     /* near-black base, matches dark theme */
+    font-family: 'Inter', sans-serif;
+    background: #0d0f0c;
     color: #1a1a1a;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;     /* crisper text rendering on Mac/Safari/Brave */
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;  /* serif font only for headings, editorial contrast */
+    font-family: 'Playfair Display', serif;
     line-height: 1.2;
 }
 
@@ -34,31 +31,26 @@ img {
     display: block;
 }
 
-
-/* ============================================================
-   NAVBAR
-   Fixed top navigation, transparent by default, solid on scroll
-   (.scrolled class is toggled by JS in main.js)
-   ============================================================ */
+/* ===== NAVBAR ===== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;                 /* stays above hero content */
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px 60px;
-    background: transparent;      /* transparent over hero image initially */
+    background: transparent;
     transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
 }
 
 .navbar.scrolled {
     background: rgba(13, 15, 12, 0.85);
-    padding: 16px 60px;                       /* slightly shrinks on scroll */
-    backdrop-filter: blur(10px);              /* frosted glass effect behind navbar */
-    -webkit-backdrop-filter: blur(10px);      /* Safari/Brave prefix */
+    padding: 16px 60px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 24px rgba(0,0,0,0.25);
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -79,7 +71,7 @@ img {
 }
 
 .nav-links a {
-    position: relative;           /* needed so the ::after underline can be positioned */
+    position: relative;
     color: #e8e8e0;
     font-size: 0.88rem;
     font-weight: 500;
@@ -88,13 +80,12 @@ img {
     transition: color 0.25s ease;
 }
 
-/* Animated underline that grows on hover/active */
 .nav-links a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;                     /* starts collapsed */
+    width: 0;
     height: 1px;
     background: #d4a24c;
     transition: width 0.25s ease;
@@ -107,7 +98,7 @@ img {
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 100%;                  /* expands to full width on hover/active */
+    width: 100%;
 }
 
 .btn-login {
@@ -118,20 +109,16 @@ img {
 }
 
 .btn-login::after {
-    display: none;                /* disable the underline effect for this pill button */
+    display: none;
 }
 
 .btn-login:hover {
     background: #d4a24c;
-    color: #0d0f0c !important;    /* overrides .nav-links a color rule */
+    color: #0d0f0c !important;
     transform: translateY(-1px);
 }
 
-
-/* ============================================================
-   HOMEPAGE HERO
-   Full-screen image hero used only on index.html
-   ============================================================ */
+/* ===== HOMEPAGE HERO ===== */
 .hero {
     position: relative;
     height: 100vh;
@@ -145,17 +132,17 @@ img {
 
 .hero-overlay {
     position: absolute;
-    inset: 0;                     /* shorthand for top/right/bottom/left: 0 */
+    inset: 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 45%, rgba(13,15,12,0.95) 100%);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;                   /* sits above the overlay */
+    z-index: 2;
     color: #fff;
     max-width: 720px;
     padding: 0 24px;
-    animation: fadeUp 1s ease both; /* fades/slides in on page load */
+    animation: fadeUp 1s ease both;
 }
 
 .hero-tag {
@@ -168,7 +155,7 @@ img {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 3.8rem); /* scales fluidly between mobile and desktop */
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
     margin-bottom: 22px;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -198,7 +185,7 @@ img {
 
 .btn-primary:hover {
     background: #e8b862;
-    transform: translateY(-3px);  /* subtle lift on hover */
+    transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(212, 162, 76, 0.35);
 }
 
@@ -225,13 +212,9 @@ img {
     50%      { transform: translate(-50%, 8px); }
 }
 
-
-/* ============================================================
-   TICKET CATEGORY CARDS
-   Used on index.html to display ticket pricing
-   ============================================================ */
+/* ===== TICKET CATEGORY CARDS (homepage) ===== */
 .info-section {
-    background: #f7f6f2;          /* light section, contrast against dark hero above */
+    background: #f7f6f2;
     padding: 110px 40px;
     text-align: center;
 }
@@ -258,7 +241,7 @@ img {
     display: flex;
     justify-content: center;
     gap: 28px;
-    flex-wrap: wrap;              /* stacks on smaller screens */
+    flex-wrap: wrap;
 }
 
 .card {
@@ -273,9 +256,9 @@ img {
 }
 
 .card:hover {
-    transform: translateY(-10px); /* lift effect */
+    transform: translateY(-10px);
     box-shadow: 0 20px 44px rgba(0,0,0,0.12);
-    border-color: rgba(212, 162, 76, 0.3); /* subtle gold border glow */
+    border-color: rgba(212, 162, 76, 0.3);
 }
 
 .card-num {
@@ -296,7 +279,7 @@ img {
 .price {
     font-size: 1.7rem;
     font-weight: 700;
-    color: #2d5a3d;               /* forest green, distinct from gold accent */
+    color: #2d5a3d;
     margin-bottom: 12px;
     font-family: 'Playfair Display', serif;
 }
@@ -307,11 +290,7 @@ img {
     line-height: 1.6;
 }
 
-
-/* ============================================================
-   HIGHLIGHT STRIP
-   Dark stats band on index.html (area, elevation, bird species)
-   ============================================================ */
+/* ===== HIGHLIGHT STRIP (homepage stats) ===== */
 .highlight-strip {
     background: #14170f;
     color: #fff;
@@ -337,15 +316,10 @@ img {
     text-transform: uppercase;
 }
 
-
-/* ============================================================
-   PAGE HERO
-   Shorter hero used on inner pages: tickets, login, contact, about
-   Each page sets its own background-image inline via style="..."
-   ============================================================ */
+/* ===== PAGE HERO (tickets / login / contact / about) ===== */
 .page-hero {
     position: relative;
-    min-height: 65vh;             /* shorter than homepage hero (100vh) */
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -353,7 +327,7 @@ img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 140px 20px 60px;     /* top padding clears the fixed navbar */
+    padding: 140px 20px 60px;
 }
 
 .page-hero .hero-overlay {
@@ -383,22 +357,33 @@ img {
     margin-bottom: 36px;
 }
 
-
-/* ============================================================
-   FORM SECTION + GLASS CARD
-   Dark section below each page-hero that holds the actual form
-   (tickets.html, login.html, contact.html)
-   ============================================================ */
+/* ===== FORM SECTION + GLASS CARD ===== */
 .form-section {
-    background: #14170f;          /* matches highlight-strip color for consistency */
+    position: relative;
+    background: #14170f;
     padding: 90px 20px 110px;
     display: flex;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.form-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 12, 8, 0.82);
+}
+
+.form-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .glass-card {
     background: rgba(20, 23, 15, 0.5);
-    backdrop-filter: blur(18px);           /* frosted glass look */
+    backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
@@ -406,7 +391,7 @@ img {
     text-align: left;
     box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     width: 100%;
-    max-width: 460px;              /* keeps form a comfortable reading width */
+    max-width: 460px;
 }
 
 .glass-card h1 {
@@ -420,6 +405,12 @@ img {
     color: #c8c8c0;
     margin: 8px 0 26px;
     font-size: 0.92rem;
+}
+
+.glass-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .glass-card label {
@@ -438,7 +429,7 @@ img {
     margin-top: 6px;
     border: 1.5px solid rgba(255,255,255,0.18);
     border-radius: 9px;
-    font-size: 0.88rem;             /* smaller so text doesn't dominate the glass card */
+    font-size: 0.88rem;
     font-family: 'Inter', sans-serif;
     background: rgba(255,255,255,0.08);
     color: #fff;
@@ -448,11 +439,11 @@ img {
 .glass-card input::placeholder,
 .glass-card textarea::placeholder {
     color: rgba(255,255,255,0.4);
-    font-size: 0.85rem;             /* placeholder text kept slightly smaller/dimmer than typed text */
+    font-size: 0.85rem;
 }
 
 .glass-card select option {
-    background: #14170f;            /* dropdown options need explicit dark bg or they render white */
+    background: #14170f;
     color: #fff;
 }
 
@@ -461,11 +452,11 @@ img {
 .glass-card textarea:focus {
     outline: none;
     border-color: #d4a24c;
-    background: rgba(255,255,255,0.12);  /* slightly brighter on focus */
+    background: rgba(255,255,255,0.12);
 }
 
 .glass-card textarea {
-    resize: vertical;               /* only allow resizing up/down, not sideways */
+    resize: vertical;
     min-height: 100px;
 }
 
@@ -477,11 +468,61 @@ img {
     cursor: pointer;
 }
 
+/* ===== BOOKING LAYOUT (tickets page: form + summary side by side) ===== */
+.booking-layout {
+    display: flex;
+    gap: 28px;
+    max-width: 900px;
+    width: 100%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-/* ============================================================
-   AUTH TABS
-   Login/Register toggle buttons inside login.html's glass card
-   ============================================================ */
+.summary-card {
+    background: rgba(212, 162, 76, 0.08);
+    border: 1px solid rgba(212, 162, 76, 0.25);
+    border-radius: 18px;
+    padding: 32px;
+    width: 100%;
+    max-width: 300px;
+    color: #fff;
+}
+
+.summary-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d4a24c;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #d8d8d0;
+    margin-bottom: 12px;
+}
+
+.summary-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 16px 0;
+}
+
+.summary-total {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.summary-note {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    color: #a8a8a0;
+    line-height: 1.5;
+}
+
+/* ===== AUTH TABS (login/register toggle) ===== */
 .auth-tabs {
     display: flex;
     gap: 8px;
@@ -510,11 +551,7 @@ img {
     color: #0d0f0c;
 }
 
-
-/* ============================================================
-   ABOUT PAGE CONTENT
-   Light section below the about.html page-hero
-   ============================================================ */
+/* ===== ABOUT PAGE CONTENT ===== */
 .about-content {
     background: #f7f6f2;
     padding: 90px 40px;
@@ -538,11 +575,7 @@ img {
     font-size: 1.02rem;
 }
 
-
-/* ============================================================
-   FOOTER
-   Shared across all pages
-   ============================================================ */
+/* ===== FOOTER ===== */
 .footer {
     background: #0d0f0c;
     color: #888;
@@ -557,10 +590,7 @@ img {
     color: #aaa;
 }
 
-
-/* ============================================================
-   RESPONSIVE (mobile/tablet)
-   ============================================================ */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .navbar, .navbar.scrolled {
         padding: 16px 24px;
@@ -588,7 +618,7 @@ img {
     }
 
     .glass-card {
-        padding: 28px;               /* less padding on small screens */
+        padding: 28px;
     }
 
     .page-hero {
