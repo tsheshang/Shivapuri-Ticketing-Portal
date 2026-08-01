@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Shivapuri National Park</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar">
+    <div class="logo">Shivapuri Nagarjun National Park</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="about.html">About Park</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login active">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1600&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+        <span class="hero-tag">MEMBERS ACCESS</span>
+        <h1>Welcome Back</h1>
+        <p class="page-sub">Login or create an account to manage your bookings</p>
+
+        <div class="glass-card">
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="loginTab" onclick="showTab('login')">Login</button>
+                <button class="tab-btn" id="registerTab" onclick="showTab('register')">Register</button>
+            </div>
+
+            <form id="loginForm" action="../../backend/controllers/loginController.php" method="POST" class="ticket-form">
+                <label for="login_email">Email</label>
+                <input type="email" name="email" id="login_email" placeholder="you@example.com" required>
+
+                <label for="login_password">Password</label>
+                <input type="password" name="password" id="login_password" placeholder="Enter your password" required>
+
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+
+            <form id="registerForm" action="../../backend/controllers/registerController.php" method="POST" class="ticket-form" style="display:none;">
+                <label for="reg_name">Full Name</label>
+                <input type="text" name="full_name" id="reg_name" placeholder="Your full name" required>
+
+                <label for="reg_email">Email</label>
+                <input type="email" name="email" id="reg_email" placeholder="you@example.com" required>
+
+                <label for="reg_password">Password</label>
+                <input type="password" name="password" id="reg_password" placeholder="Create a password" required>
+
+                <label for="reg_confirm">Confirm Password</label>
+                <input type="password" name="confirm_password" id="reg_confirm" placeholder="Re-enter password" required>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Shivapuri National Park Ticketing Portal. All rights reserved.</p>
+    <p>Kathmandu, Nepal</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+   function showTab(tab) {
+    console.log(tab);
+
+    document.getElementById('loginForm').style.display =
+        tab === 'login' ? 'flex' : 'none';
+
+    document.getElementById('registerForm').style.display =
+        tab === 'register' ? 'flex' : 'none';
+
+    document.getElementById('loginTab').classList.toggle('active', tab === 'login');
+    document.getElementById('registerTab').classList.toggle('active', tab === 'register');
+}
+</script>
+</body>
+</html>

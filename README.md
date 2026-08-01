@@ -1,22 +1,54 @@
-# Shivapuri National Park Ticketing Portal
+# Shivapuri Nagarjun National Park Ticketing Portal
 
-A web-based ticketing system for Shivapuri National Park, built as a BCA 3rd semester project.
+A web-based ticket booking system for Shivapuri Nagarjun National Park, built as a BCA 3rd semester project.
+
+Visitors can browse ticket categories, book entry tickets online, and manage their bookings. Admins can manage ticket categories, view all bookings, and control access through a role-based authentication system.
 
 ## Tech Stack
-- PHP (backend)
-- MySQL (database)
-- HTML/CSS (frontend)
+
+- **Frontend:** HTML, CSS, JavaScript (static pages, vanilla JS)
+- **Backend:** PHP (plain PHP, no framework — handles form processing, auth, and DB logic)
+- **Database:** PostgreSQL
+- **Server:** Apache (via XAMPP)
+
+## Features
+
+- 🎟️ Browse ticket categories and prices
+- 📅 Book entry tickets with visitor details
+- 🔐 User authentication (register/login)
+- 🛡️ Role-based authorization (Visitor vs Admin)
+- 📋 Full CRUD:
+  - Ticket categories (Admin managed)
+  - Bookings (Visitor creates/views own; Admin manages all)
+  - Users (registration, profile)
 
 ## Project Structure
-- `frontend/` - pages, includes, and assets (CSS/JS/images)
-- `backend/` - config, models, controllers
-- `database/` - SQL schema
 
-## Setup
-1. Install XAMPP
-2. Clone this repo into `htdocs` (or symlink it)
-3. Import `database/schema.sql` into phpMyAdmin
-4. Visit `http://localhost/shivapuri-ticketing/frontend/pages/index.php`
+shivapuri-ticketing/
+├── frontend/
+│   ├── pages/               # index.html, tickets.html, login.html, etc.
+│   └── assets/
+│       ├── css/
+│       ├── js/
+│       └── images/
+├── backend/
+│   ├── config/               # db.php - Postgres connection
+│   ├── controllers/          # request handlers (bookTicket.php, authController.php)
+│   ├── models/                # DB interaction classes (Booking, User, TicketCategory)
+│   └── core/                   # session/auth helper functions
+├── database/
+│   └── schema.sql               # PostgreSQL schema
+├── .gitignore
+└── README.md
+
+## Setup Instructions
+
+1. Install [XAMPP](https://www.apachefriends.org/download.html) (Apache + PHP)
+2. Install [PostgreSQL](https://postgresapp.com) (or via Homebrew)
+3. Symlink this project folder into XAMPP's htdocs
+4. Create the database and import database/schema.sql
+5. Configure DB credentials in backend/config/db.php
+6. Visit http://localhost/shivapuri-ticketing/frontend/pages/index.html
 
 ## Author
-Sheshang Tamang
+Tsheshang Tamang — BCA 3rd Semester

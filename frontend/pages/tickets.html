@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - Shivapuri National Park</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar">
+    <div class="logo">Shivapuri Nagarjun National Park</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tickets.html" class="active">Tickets</a></li>
+            <li><a href="about.html">About Park</a></li>
+            <li><a href="contact.html">Contact</a></li>F
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?auto=format&fit=crop&w=1600&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+        <span class="hero-tag">PLAN YOUR VISIT</span>
+        <h1>Book Your Entry</h1>
+        <p class="page-sub">Reserve your ticket in minutes and step into the forest</p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="glass-card">
+        <h1>Booking Details</h1>
+        <p class="subtitle">Fill in your details below to reserve your visit</p>
+
+        <form action="../../backend/controllers/bookTicket.php" method="POST" class="ticket-form">
+            <label for="category">Visitor Category</label>
+            <select name="category" id="category" required>
+                <option value="">-- Select Category --</option>
+                <option value="citizen">Nepali Citizen - NPR 100</option>
+                <option value="saarc">SAARC National - NPR 500</option>
+                <option value="foreigner">Foreign Tourist - NPR 1000</option>
+            </select>
+
+            <label for="visit_date">Visit Date</label>
+            <input type="date" name="visit_date" id="visit_date" required>
+
+            <label for="quantity">Number of Tickets</label>
+            <input type="number" name="quantity" id="quantity" min="1" max="20" value="1" required>
+
+            <label for="full_name">Full Name</label>
+            <input type="text" name="full_name" id="full_name" placeholder="Your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="98XXXXXXXX" required>
+
+            <button type="submit" class="btn-primary">Proceed to Book</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Shivapuri National Park Ticketing Portal. All rights reserved.</p>
+    <p>Kathmandu, Nepal</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
