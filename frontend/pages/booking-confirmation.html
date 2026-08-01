@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Shivapuri National Park</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar">
+    <div class="logo">Shivapuri Nagarjun National Park</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="about.html">About Park</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="form-section" style="min-height: 80vh; align-items: center;">
+    <div class="glass-card" style="text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 10px;">✅</div>
+        <h1>Booking Confirmed!</h1>
+        <p class="subtitle">Your entry ticket has been reserved</p>
+
+        <div style="background: rgba(212,162,76,0.12); border: 1px solid rgba(212,162,76,0.3); border-radius: 12px; padding: 20px; margin: 24px 0;">
+            <p style="color: #a8a8a0; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 6px;">BOOKING REFERENCE</p>
+            <p id="bookingRef" style="color: #d4a24c; font-size: 1.6rem; font-weight: 700; font-family: 'Playfair Display', serif;">—</p>
+        </div>
+
+        <p style="color: #c8c8c0; font-size: 0.9rem; line-height: 1.6;">
+            Please save this reference number. Present it at the entry gate along with a valid ID for verification.
+        </p>
+
+        <a href="index.html" class="btn-primary" style="margin-top: 24px;">Back to Home</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Shivapuri National Park Ticketing Portal. All rights reserved.</p>
+    <p>Kathmandu, Nepal</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref');
+    if (ref) {
+        document.getElementById('bookingRef').textContent = ref;
+    }
+</script>
+</body>
+</html>
