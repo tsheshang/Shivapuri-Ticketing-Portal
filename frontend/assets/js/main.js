@@ -50,4 +50,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Check login state and update navbar accordingly
+  fetch("/shivapuri-ticketing/backend/controllers/checkSession.php")
+    .then(res => res.json())
+    .then(data => {
+        const loginBtn = document.querySelector(".btn-login");
+        if (!loginBtn) return;
+
+        if (data.loggedIn) {
+            loginBtn.textContent = data.full_name;
+            loginBtn.href = "#";
+            loginBtn.classList.add("logged-in");
+
+            // Replace login link behavior with a dropdown-style logout
+            loginBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (confirm("Log out of your account?")) {
+                    window.location.href = "/shivapuri-ticketing/backend/controllers/logout.php";
+                }
+            });
+        }
+    })
+    .catch(err => console.error("Session check failed:", err));
 });
