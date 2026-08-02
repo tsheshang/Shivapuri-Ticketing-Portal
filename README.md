@@ -22,24 +22,6 @@ Visitors can browse ticket categories, book entry tickets online, and manage the
   - Bookings (Visitor creates/views own; Admin manages all)
   - Users (registration, profile)
 
-## Project Structure
-
-shivapuri-ticketing/
-├── frontend/
-│   ├── pages/               # index.html, tickets.html, login.html, etc.
-│   └── assets/
-│       ├── css/
-│       ├── js/
-│       └── images/
-├── backend/
-│   ├── config/               # db.php - Postgres connection
-│   ├── controllers/          # request handlers (bookTicket.php, authController.php)
-│   ├── models/                # DB interaction classes (Booking, User, TicketCategory)
-│   └── core/                   # session/auth helper functions
-├── database/
-│   └── schema.sql               # PostgreSQL schema
-├── .gitignore
-└── README.md
 
 ## Setup Instructions
 
