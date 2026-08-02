@@ -21,6 +21,9 @@
             <button type="button" class="admin-nav-btn" id="categoriesTab" onclick="showAdminTab('categories')">
                 🎟️ Ticket Categories
             </button>
+            <button type="button" class="admin-nav-btn" id="messagesTab" onclick="showAdminTab('messages')">
+                ✉️ Messages
+            </button>
         </nav>
         <div class="admin-sidebar-footer">
             <a href="index.html">← View Live Site</a>
@@ -117,6 +120,14 @@
             </div>
         </div>
 
+
+    <div id="messagesPanel" class="admin-panel" style="display:none;">
+        <div class="panel-heading">
+            <h2>Contact Messages</h2>
+            <p>Visitor inquiries submitted through the contact form</p>
+        </div>
+        <div id="messagesList" class="messages-list"></div>
+    </div>
     </main>
 </div>
 

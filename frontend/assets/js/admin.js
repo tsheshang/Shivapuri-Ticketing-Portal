@@ -3,8 +3,10 @@ const API = "/shivapuri-ticketing/backend/controllers/";
 function showAdminTab(tab) {
     document.getElementById('bookingsPanel').style.display = tab === 'bookings' ? 'block' : 'none';
     document.getElementById('categoriesPanel').style.display = tab === 'categories' ? 'block' : 'none';
+    document.getElementById('messagesPanel').style.display = tab === 'messages' ? 'block' : 'none';
     document.getElementById('bookingsTab').classList.toggle('active', tab === 'bookings');
     document.getElementById('categoriesTab').classList.toggle('active', tab === 'categories');
+    document.getElementById('messagesTab').classList.toggle('active', tab === 'messages');
 }
 
 async function loadBookings() {
@@ -114,5 +116,42 @@ document.getElementById('addCategoryForm')?.addEventListener('submit', async (e)
     loadCategories();
 });
 
+async function loadMessages() {
+    const res = await fetch(API + "adminGetMessages.php");
+    const messages = await res.json();
+    const container = document.getElementById('messagesList');
+
+    if (!messages.length) {
+        container.innerHTML = "<p style='color:#999;'>No messages yet.</p>";
+        return;
+    }
+
+    container.innerHTML = messages.map(m => `
+        <div class="message-card">
+            <div class="message-header">
+                <div>
+                    <strong>${m.name}</strong>
+                    <span style="color:#999; font-size:0.82rem;"> — ${m.email}</span>
+                </div>
+                <button class="danger" onclick="deleteMessage(${m.id})">Delete</button>
+            </div>
+            <p class="message-body">${m.message}</p>
+            <span class="message-date">${new Date(m.created_at).toLocaleString()}</span>
+        </div>
+    `).join('');
+}
+
+async function deleteMessage(id) {
+    if (!confirm("Delete this message?")) return;
+
+    await fetch(API + "adminDeleteMessage.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    });
+    loadMessages();
+}
+
 loadBookings();
 loadCategories();
+loadMessages();

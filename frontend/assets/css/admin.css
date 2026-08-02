@@ -438,3 +438,40 @@
 .admin-main > * {
     max-width: 1200px;
 }
+
+/* ===== MESSAGES PANEL ===== */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.message-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px 22px;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message-header strong {
+    color: #fff;
+}
+
+.message-body {
+    color: #d8d8d0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.message-date {
+    color: #777;
+    font-size: 0.78rem;
+}
