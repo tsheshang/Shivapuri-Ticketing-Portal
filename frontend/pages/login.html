@@ -71,18 +71,23 @@
 
 <script src="../assets/js/main.js"></script>
 <script>
-   function showTab(tab) {
-    console.log(tab);
+    // Pass along redirect param to login form if present in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTo = urlParams.get("redirect");
+    if (redirectTo) {
+        const hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = "redirect";
+        hiddenInput.value = redirectTo;
+        document.getElementById("loginForm").appendChild(hiddenInput);
+    }
 
-    document.getElementById('loginForm').style.display =
-        tab === 'login' ? 'flex' : 'none';
-
-    document.getElementById('registerForm').style.display =
-        tab === 'register' ? 'flex' : 'none';
-
-    document.getElementById('loginTab').classList.toggle('active', tab === 'login');
-    document.getElementById('registerTab').classList.toggle('active', tab === 'register');
-}
+    function showTab(tab) {
+        document.getElementById('loginForm').style.display = tab === 'login' ? 'flex' : 'none';
+        document.getElementById('registerForm').style.display = tab === 'register' ? 'flex' : 'none';
+        document.getElementById('loginTab').classList.toggle('active', tab === 'login');
+        document.getElementById('registerTab').classList.toggle('active', tab === 'register');
+    }
 </script>
 </body>
 </html>

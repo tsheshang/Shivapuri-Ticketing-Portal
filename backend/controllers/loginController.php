@@ -29,8 +29,9 @@ $_SESSION['role'] = $user['role'];
 
 // Redirect admin and visitors differently
 if ($user['role'] === 'admin') {
-    header('Location: ../../frontend/pages/admin-dashboard.html'); // we'll build this later
+    header('Location: ../../frontend/pages/admin-dashboard.html');
 } else {
-    header('Location: ../../frontend/pages/index.html');
+    $redirect = $_POST['redirect'] ?? 'index.html';
+    $redirect = basename($redirect); // sanitize, only allow filenames, no path traversal
+    header('Location: ../../frontend/pages/' . $redirect);
 }
-exit;
