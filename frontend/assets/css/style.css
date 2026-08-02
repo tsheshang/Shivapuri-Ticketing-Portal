@@ -625,6 +625,65 @@ img {
         padding: 120px 20px 40px;
     }
 }
+
+/* ===== CONTACT INFO CARDS ===== */
+.contact-info-section {
+    background: #f7f6f2;
+    padding: 80px 40px;
+}
+
+.contact-info-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.contact-info-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 26px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.1);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.contact-info-card h3 {
+    font-size: 1.1rem;
+    color: #16180f;
+    margin-bottom: 10px;
+}
+
+.contact-info-card p {
+    color: #666;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== ADMIN DASHBOARD ===== */
 .admin-section {
     background: #14170f;

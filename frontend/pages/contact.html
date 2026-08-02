@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Shivapuri National Park</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,22 +28,52 @@
     <div class="page-hero-content">
         <span class="hero-tag">WE'D LOVE TO HEAR FROM YOU</span>
         <h1>Get in Touch</h1>
-        <p class="page-sub">Questions about your visit? We're here to help.</p>
+        <p class="page-sub">Questions about your visit? Reach out any way that suits you.</p>
+    </div>
+</section>
 
-        <div class="glass-card">
-            <form action="../../backend/controllers/contactController.php" method="POST" class="ticket-form">
-                <label for="name">Full Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="you@example.com" required>
-
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="5" placeholder="How can we help?" required></textarea>
-
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+<section class="contact-info-section">
+    <div class="contact-info-grid">
+        <div class="contact-info-card">
+            <div class="contact-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Shivapuri Nagarjun National Park<br>Panimuhan, Budhanilkantha<br>Kathmandu 44600, Nepal</p>
         </div>
+        <div class="contact-info-card">
+            <div class="contact-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>Park Office: +977-1-4375672<br>Ticket Counter: +977-1-4375890<br>Mon – Sun, 6:00 AM – 6:00 PM</p>
+        </div>
+        <div class="contact-info-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>info@shivapurinagarjun.gov.np<br>bookings@shivapurinagarjun.gov.np</p>
+        </div>
+        <div class="contact-info-card">
+            <div class="contact-icon">🕒</div>
+            <h3>Park Hours</h3>
+            <p>Summer: 6:00 AM – 6:00 PM<br>Winter: 6:30 AM – 5:30 PM<br>Open all year round</p>
+        </div>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="glass-card">
+        <h1>Send a Message</h1>
+        <p class="subtitle">We usually respond within 24 hours</p>
+
+        <form action="../../backend/controllers/contactController.php" method="POST" class="ticket-form">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="How can we help?" required></textarea>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
     </div>
 </section>
 
