@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Shivapuri National Park</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar">
+    <div class="logo">Shivapuri Nagarjun National Park</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="my-bookings.html" class="active">My Bookings</a></li>
+            <li><a href="about.html">About Park</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="admin-section" style="background:#14170f;">
+    <div class="panel-heading" style="max-width:1100px; margin:0 auto 30px;">
+        <h2>My Bookings</h2>
+        <p>All your reserved entry tickets</p>
+    </div>
+
+    <div class="table-wrap" style="max-width:1100px; margin:0 auto;">
+        <table class="admin-table" id="myBookingsTable">
+            <thead>
+                <tr>
+                    <th>Ref</th>
+                    <th>Category</th>
+                    <th>Visit Date</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="myBookingsBody">
+                <tr><td colspan="7" class="loading-row">Loading your bookings...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Shivapuri National Park Ticketing Portal. All rights reserved.</p>
+    <p>Kathmandu, Nepal</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/my-bookings.js"></script>
+</body>
+</html>

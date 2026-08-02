@@ -1,0 +1,440 @@
+/* ===== ADMIN LAYOUT ===== */
+.admin-body {
+    background: #0d0f0c;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 240px;
+    background: #14170f;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.admin-logo {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    padding: 0 8px;
+}
+
+.admin-logo span {
+    color: #d4a24c;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.admin-nav-btn {
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: #b8b8b0;
+    padding: 13px 16px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav-btn:hover {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+}
+
+.admin-nav-btn.active {
+    background: rgba(212,162,76,0.15);
+    color: #d4a24c;
+    font-weight: 600;
+}
+
+.admin-sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-sidebar-footer a {
+    color: #999;
+    font-size: 0.85rem;
+    padding: 8px;
+    transition: color 0.2s ease;
+}
+
+.admin-sidebar-footer a:hover {
+    color: #fff;
+}
+
+.admin-logout {
+    color: #e88a8a !important;
+}
+
+/* Main content */
+.admin-main {
+    position: relative;
+    background-image: linear-gradient(135deg, rgba(13,15,12,0.75), rgba(20,23,15,0.65)), url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-left: 240px;
+    padding: 40px 44px;
+    flex: 1;
+}
+
+/* Stat cards */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-label {
+    color: #999;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-good { color: #6fcf97; }
+.stat-bad { color: #e88a8a; }
+
+/* Panel heading */
+.panel-heading {
+    margin-bottom: 24px;
+}
+
+.panel-heading h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.panel-heading p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Add category card */
+.admin-add-card {
+    max-width: 100%;
+    margin-bottom: 30px;
+    padding: 26px 28px;
+}
+
+.admin-add-card h1 {
+    text-align: left;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+}
+
+.admin-inline-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-inline-form > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 140px;
+}
+
+.admin-inline-form label {
+    font-size: 0.82rem;
+    color: #d8d8d0;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.admin-inline-form input {
+    padding: 10px 12px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.admin-inline-form input:focus {
+    outline: none;
+    border-color: #d4a24c;
+}
+
+.admin-inline-form .btn-primary {
+    padding: 11px 26px;
+    white-space: nowrap;
+}
+
+/* Table */
+.table-wrap {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.02);
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.05);
+    color: #d4a24c;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 14px 18px;
+    color: #e0e0d8;
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+    background: rgba(255,255,255,0.02);
+}
+
+.loading-row {
+    text-align: center;
+    color: #888;
+    padding: 30px !important;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-confirmed {
+    background: rgba(111, 207, 151, 0.15);
+    color: #6fcf97;
+}
+
+.status-cancelled {
+    background: rgba(232, 138, 138, 0.15);
+    color: #e88a8a;
+}
+
+.admin-table button {
+    background: rgba(212,162,76,0.12);
+    border: 1px solid rgba(212,162,76,0.35);
+    color: #d4a24c;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    margin-right: 6px;
+    transition: background 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-table button:hover {
+    background: rgba(212,162,76,0.25);
+}
+
+.admin-table button.danger {
+    background: rgba(232,138,138,0.1);
+    border-color: rgba(232,138,138,0.35);
+    color: #e88a8a;
+}
+
+.admin-table button.danger:hover {
+    background: rgba(232,138,138,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .admin-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 20px;
+    }
+
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-main {
+        margin-left: 0;
+        padding: 24px 20px;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-nav {
+        flex-direction: row;
+    }
+
+    .admin-sidebar-footer {
+        display: none;
+    }
+}
+
+/* Sidebar gradient + accent glow */
+.admin-sidebar {
+    background: linear-gradient(180deg, #14170f 0%, #0d0f0c 100%);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+
+.admin-logo {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(212,162,76,0.15);
+    margin-bottom: 24px;
+}
+
+/* Stat cards get a subtle gold-tinted glass look */
+.stat-card {
+    background: rgba(20, 23, 15, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212,162,76,0.15);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(212,162,76,0.4);
+    transform: translateY(-3px);
+}
+
+/* Table wrap gets glass treatment too, to sit nicely over the bg image */
+.table-wrap {
+    background: rgba(20, 23, 15, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.admin-table {
+    background: transparent;
+}
+
+.admin-table th {
+    background: rgba(255,255,255,0.04);
+}
+
+/* Panel heading gets a small gold accent bar */
+.panel-heading {
+    position: relative;
+    padding-left: 16px;
+}
+
+.panel-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: #d4a24c;
+    border-radius: 2px;
+}
+
+/* ===== Extra color pass ===== */
+
+/* Give the whole layout a base color so edges never look flat black */
+.admin-layout {
+    background: #0a0c08;
+}
+
+/* Sidebar nav icons get a colored circle backdrop */
+.admin-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Active nav button gets a left accent bar + stronger gold */
+.admin-nav-btn.active {
+    background: linear-gradient(90deg, rgba(212,162,76,0.22), rgba(212,162,76,0.06));
+    border-left: 3px solid #d4a24c;
+    padding-left: 13px;
+}
+
+/* Stat cards: each gets a distinct colored top border for visual variety */
+.admin-stats .stat-card:nth-child(1) { border-top: 3px solid #6a9bd8; }
+.admin-stats .stat-card:nth-child(2) { border-top: 3px solid #6fcf97; }
+.admin-stats .stat-card:nth-child(3) { border-top: 3px solid #e88a8a; }
+.admin-stats .stat-card:nth-child(4) { border-top: 3px solid #d4a24c; }
+
+.stat-card {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Table header gets a warmer tint instead of flat gray */
+.admin-table th {
+    background: linear-gradient(90deg, rgba(212,162,76,0.1), rgba(212,162,76,0.03));
+}
+
+/* Table rows alternate slightly for readability against the bg image */
+.admin-table tbody tr:nth-child(even) td {
+    background: rgba(255,255,255,0.015);
+}
+
+.admin-table tbody tr:hover td {
+    background: rgba(212,162,76,0.05);
+}
+
+/* Give the whole main content a max-width so it doesn't feel like a void on large screens */
+.admin-main > * {
+    max-width: 1200px;
+}
