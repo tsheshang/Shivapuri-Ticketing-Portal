@@ -9,28 +9,31 @@ async function loadMyBookings() {
     }
 
     const bookings = await res.json();
-    const tbody = document.getElementById('myBookingsBody');
+    const container = document.getElementById('myBookingsList');
 
     if (!bookings.length) {
-        tbody.innerHTML = "<tr><td colspan='7' class='loading-row'>You haven't booked any tickets yet. <a href='tickets.html' style='color:#d4a24c;'>Book one now →</a></td></tr>";
+        container.innerHTML = "<p class='empty-text'>You haven't booked any tickets yet. <a href='tickets.html'>Book one now →</a></p>";
         return;
     }
 
-    tbody.innerHTML = bookings.map(b => `
-        <tr>
-            <td>${b.booking_ref}</td>
-            <td>${b.category_name}</td>
-            <td>${b.visit_date}</td>
-            <td>${b.quantity}</td>
-            <td>NPR ${b.total_price}</td>
-            <td><span class="status-badge status-${b.status}">${b.status}</span></td>
-            <td>
+    container.innerHTML = bookings.map(b => `
+        <div class="booking-card ${b.status === 'cancelled' ? 'is-cancelled' : ''}">
+            <div class="booking-main">
+                <div class="booking-ref">${b.booking_ref}</div>
+                <div class="booking-category">${b.category_name} × ${b.quantity}</div>
+                <div class="booking-meta">
+                    <span>📅 ${b.visit_date}</span>
+                    <span class="status-badge status-${b.status}">${b.status}</span>
+                </div>
+            </div>
+            <div class="booking-side">
+                <div class="booking-price">NPR ${b.total_price}</div>
                 ${b.status === 'confirmed'
-                    ? `<button class="danger" onclick="cancelBooking(${b.id})">Cancel</button>`
-                    : `<span style="color:#777; font-size:0.85rem;">—</span>`
+                    ? `<button class="booking-cancel-btn" onclick="cancelBooking(${b.id})">Cancel</button>`
+                    : ''
                 }
-            </td>
-        </tr>
+            </div>
+        </div>
     `).join('');
 }
 

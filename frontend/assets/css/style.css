@@ -719,3 +719,116 @@ img {
 .admin-table button.danger:hover {
     background: rgba(200,60,60,0.3);
 }
+/* ===== MY BOOKINGS PAGE ===== */
+.bookings-section {
+    background: #14170f;
+    padding: 70px 20px 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookings-wrap {
+    width: 100%;
+    max-width: 760px;
+}
+
+.loading-text, .empty-text {
+    color: #999;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.empty-text a {
+    color: #d4a24c;
+    font-weight: 600;
+}
+
+.booking-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 26px 30px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.booking-card:hover {
+    border-color: rgba(212,162,76,0.3);
+    transform: translateY(-2px);
+}
+
+.booking-card.is-cancelled {
+    opacity: 0.55;
+}
+
+.booking-main {
+    flex: 1;
+    min-width: 220px;
+}
+
+.booking-ref {
+    color: #d4a24c;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.booking-category {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.booking-meta {
+    color: #999;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.booking-side {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.booking-price {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
+.booking-cancel-btn {
+    background: rgba(232,138,138,0.1);
+    border: 1px solid rgba(232,138,138,0.35);
+    color: #e88a8a;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-cancel-btn:hover {
+    background: rgba(232,138,138,0.22);
+}
+
+@media (max-width: 600px) {
+    .booking-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .booking-side {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
