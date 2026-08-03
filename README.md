@@ -33,4 +33,4 @@ Visitors can browse ticket categories, book entry tickets online, and manage the
 6. Visit http://localhost/shivapuri-ticketing/frontend/pages/index.html
 
 ## Author
-Tsheshang Tamang — BCA 3rd Semester
+Tsheshang Tamang — BCA 4th Semester
